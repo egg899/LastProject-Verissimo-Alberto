@@ -1,0 +1,69 @@
+.post__info{
+  margin:0 auto 10px auto ;
+  width:70%;
+  background-color: red;
+  padding: 10px;
+  border-radius:5px;
+
+}
+
+.post__info-Center{
+  text-align: center;
+}
+
+.post__info-ingredients{
+  width:10%;
+}
+.post__info-foodPairing{
+  width:20%;
+}
+.post__info-Wrapper{
+overflow: hidden;
+ transition: all 800ms ease-out;
+}
+
+.image{
+margin-left:15px;
+}
+.description{
+width:70%;
+margin-top: 5%;
+margin-left:12%;
+}
+
+.left {
+  float:left;
+}
+.right {
+  float:right;
+}
+
+.clear{
+  clear:both;
+}
+
+
+
+/**Animations**/
+
+.example-enter {
+  opacity: 0.01;
+  transform: translate(100vw);
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition:  4000ms ease-out;
+  transfor: translateX(0%)
+}
+
+.example-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition:  300ms ease-in;
+  transform: translateX(-100vw);
+}
