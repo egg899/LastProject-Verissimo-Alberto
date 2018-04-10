@@ -56,15 +56,43 @@ console.log(this.state.beerType);
 
 
   render() {
+    const posts=this.state.beerType;
+
     return (
       <div >
 
       <Form searchBeer={(e)=>this.searchBeer(e)}/>
 <br/>
-      <Info
-        beerType={this.state.beerType}
 
-      />
+{posts.map(post =>(
+  <Info
+name={post.name}
+description={post.description}
+image_url={post.image_url}
+ingredients={post.ingredients}
+  />
+))}
+{/* <Info
+  beerType={posts}
+/> */}
+{/* {
+  posts.map(post =>(
+    <Info
+      beerType={posts}
+
+      description={post.description}
+
+
+    />
+
+
+  ))
+
+
+
+} */}
+
+
 
       </div>
     );
