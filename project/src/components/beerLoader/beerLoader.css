@@ -1,0 +1,33 @@
+.beerLoader{
+  width:300px;
+  height:300px;
+  animation: tossing 1s linear infinite;
+  background-image: url("https://static1.squarespace.com/static/58ddacfe1b631b4993803687/t/5907e78abebafb87ca4c5cd6/1497293046905/icon-ourbeers.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0 auto;
+}
+
+@keyframes tossing {
+	0% {
+		transform: rotate(-4deg);
+	}
+	50% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(-4deg);
+	}
+}
+
+@-webkit-keyframes tossing {
+	0% {
+		-webkit-transform: rotate(-4deg);
+	}
+	50% {
+		-webkit-transform: rotate(4deg);
+	}
+	100% {
+		-webkit-transform: rotate(-4deg);
+	}
+}

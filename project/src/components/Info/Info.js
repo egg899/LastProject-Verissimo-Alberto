@@ -2,6 +2,7 @@ import React from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import {BeerImage} from './beerImage';
 import { Comment } from './Comments';
+
 import CountUp, { startAnimation } from 'react-countup';
 import './info.css';
 import StarRatingComponent from 'react-star-rating-component';
@@ -14,6 +15,7 @@ constructor(props){
   super(props);
 
   this.state = {
+
     comments: [],
     shown:true,
     rating: 1
@@ -76,6 +78,7 @@ opacity:this.state.shown ? 0 : 1,
 
                    <h1 className="post__info-Center">  {this.props.name}</h1>
                        <div className="post__info-Details ">
+
                          {/* <img className="left image" width="7%" alt={beer.name} src={beer.image_url}/> */}
           <div className="left description post__info-Center">{this.props.description}</div>
                         <div onClick={this.toggle.bind(this)}><span ><BeerImage event={(event) => {

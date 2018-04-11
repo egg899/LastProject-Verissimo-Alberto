@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Timeline} from './components';
+
 import './App.css';
 
 

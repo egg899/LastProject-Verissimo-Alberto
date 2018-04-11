@@ -11,6 +11,7 @@ constructor(props){
   super(props);
   this.state = {
     beerType:[],
+    pending:false
 
 
 
@@ -26,7 +27,7 @@ searchBeer(e){
 
 this.setState({
     beerType:[],
-
+    pending:true
 
 
 })
@@ -36,7 +37,7 @@ this.setState({
 
     this.setState({
         beerType:data,
-
+        pending:false
 
     });
 
@@ -61,8 +62,12 @@ console.log(this.state.beerType);
     return (
       <div >
 
-      <Form searchBeer={(e)=>this.searchBeer(e)}/>
+      <Form pending={this.state.pending}
+        searchBeer={(e)=>this.searchBeer(e)}
+
+      />
 <br/>
+
 
 {posts.map(post =>(
 
