@@ -18,6 +18,7 @@
   width:20%;
 }
 .post__info-Wrapper{
+  width:100%;
 overflow: hidden;
  transition: all 800ms ease-out;
 }
