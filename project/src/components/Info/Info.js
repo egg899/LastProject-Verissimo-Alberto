@@ -18,7 +18,7 @@ constructor(props){
 
     comments: [],
     shown:true,
-    rating: 1
+    rating: Math.ceil(Math.random() * Math.floor(5))
   }
 }//constructor
 
@@ -68,9 +68,13 @@ opacity:this.state.shown ? 0 : 1,
 
     return(
 
+
        <div className="post">
 
-
+         <CSSTransitionGroup
+                   transitionName="example"
+                   transitionEnterTimeout={500}
+                   transitionLeaveTimeout={300}>
 
 
          <div className="post__info">
@@ -153,17 +157,23 @@ opacity:this.state.shown ? 0 : 1,
                              name="rate1"
                              starCount={5}
                             value={rating}
-                             onStarClick={this.onStarClick.bind(this)}
+                             onStarClick={this.onStarClick.bind(this)
+                             }
                            />
+
+
                         </div>
 
                         {this.state.comments.map(comment =><Comment owner={comment.owner} text={comment.text}/>)}
                         <hr className="post__body-separator" />
                         <form onSubmit={(event)=>this.handleCommentSubmission(event)}>
                         <input placeholder="Add a comment" className="post__coment-input" />
-                      </form>
-   </div>{/*Post_info*/}
 
+                      </form>
+
+
+   </div>{/*Post_info*/}
+</CSSTransitionGroup>
 </div>
 
 

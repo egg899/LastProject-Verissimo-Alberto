@@ -4,9 +4,9 @@ import './Form.css';
 
 export const Form = (props)=> (
   <div>
-
-      <form className="form">
-
+            
+      <form onSubmit={props.searchBarBeer}className="form">
+        <input /> <button>Click Here</button><br />
       <input type="button" value="Punk Ipa" onClick={props.searchBeer}/>
         <input type="button" value="Dead Pony Club" onClick={props.searchBeer}/>
         <input type="button" value="Jet Black Heart" onClick={props.searchBeer}/>

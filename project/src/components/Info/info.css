@@ -1,7 +1,10 @@
 .post__info{
   margin:0 auto 10px auto ;
   width:70%;
-  background-color: red;
+  background-image:url("http://www.suncityvillas.com/size/1280x960/server13-cdn/2016/03/13/white-wood-wall-texture-pink-texture-9edbdd7367dfd232.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
   padding: 10px;
   border-radius:5px;
 
@@ -55,7 +58,7 @@ margin-left:12%;
 .example-enter.example-enter-active {
   opacity: 1;
   transition:  4000ms ease-out;
-  transfor: translateX(0%)
+  transform: translateX(0%)
 }
 
 .example-leave {
