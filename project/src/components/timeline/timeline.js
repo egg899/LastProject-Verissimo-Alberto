@@ -105,15 +105,15 @@ console.log(this.state.beerType);
         {/* <form onSubmit={(e)=>this.searchBarBeer(e)}>
           <input /><button /> <br />
         </form> */}
-        <center><img className="logo" src="https://www.brewdog.com/images/newshop/logo.png" /></center>
-      <Form pending={this.state.pending}
+        <center><img width="150" className="logo" src="https://www.buysmart.org.uk/cdn/scale/340/340/brand-logo/1501054085-11b58021123c9b1865ef76f0a5f9edba.png" /></center>
+  <div >    <Form pending={this.state.pending}
         searchBeer={(e)=>this.searchBeer(e)}
         searchBarBeer={(e)=>this.searchBarBeer(e)}
 
-      />
+      /></div>
 <br/>
 
-
+<div className="timeline">
 {posts.map(post =>(
 
   <Info
@@ -125,27 +125,9 @@ food_pairing={post.food_pairing}
 abv={post.abv}
   />
 ))}
-{/* <Info
-  beerType={posts}
-/> */}
-{/* {
-  posts.map(post =>(
-    <Info
-      beerType={posts}
-
-      description={post.description}
 
 
-    />
-
-
-  ))
-
-
-
-} */}
-
-
+</div>{/*timeline*/}
 
       </div>
     );

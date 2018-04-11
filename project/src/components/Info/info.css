@@ -1,9 +1,11 @@
+
 .post__info{
   margin:0 auto 10px auto ;
   width:70%;
   background-image:url("http://www.suncityvillas.com/size/1280x960/server13-cdn/2016/03/13/white-wood-wall-texture-pink-texture-9edbdd7367dfd232.jpg");
   background-repeat: no-repeat;
   background-position: top;
+
   background-size: cover;
   padding: 10px;
   border-radius:5px;
@@ -13,6 +15,8 @@
 .post__info-Center{
   text-align: center;
 }
+
+
 
 .post__info-ingredients{
   width:10%;
@@ -26,13 +30,24 @@ overflow: hidden;
  transition: all 800ms ease-out;
 }
 
+.post__comment{
+  background-color: rgba(207, 210, 211, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 1px -1px 8px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
+    box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
+
+}
+
 .image{
 margin-left:15px;
 }
-.description{
+.post__description{
 width:70%;
 margin-top: 5%;
 margin-left:12%;
+text-shadow: 2px 2px 8px gray;
 }
 
 .left {

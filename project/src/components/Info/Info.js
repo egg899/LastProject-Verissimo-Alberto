@@ -84,7 +84,7 @@ opacity:this.state.shown ? 0 : 1,
                        <div className="post__info-Details ">
 
                          {/* <img className="left image" width="7%" alt={beer.name} src={beer.image_url}/> */}
-          <div className="left description post__info-Center">{this.props.description}</div>
+          <div className="left post__description post__info-Center">{this.props.description}</div>
                         <div onClick={this.toggle.bind(this)}><span ><BeerImage event={(event) => {
       startAnimation(this.myCountUp);
     }} className="right"  image_url={this.props.image_url} /></span></div>
@@ -151,6 +151,7 @@ opacity:this.state.shown ? 0 : 1,
        </div>{/**Post_info-Wrapper*/}
      </div>{/*Post_info-details*/}
 
+<div className="post__comment">
      <div className="post__rating">
                            <h2>Rating from state: {rating}</h2>
                            <StarRatingComponent
@@ -170,7 +171,7 @@ opacity:this.state.shown ? 0 : 1,
                         <input placeholder="Add a comment" className="post__coment-input" />
 
                       </form>
-
+                    </div>{/*post__comment*/}
 
    </div>{/*Post_info*/}
 </CSSTransitionGroup>
