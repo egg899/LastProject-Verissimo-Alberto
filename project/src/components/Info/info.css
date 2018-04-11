@@ -10,6 +10,9 @@ transition: all 800ms ease-out;
   background-attachment: fixed;
   padding: 10px;
   border-radius:5px;
+  -moz-box-shadow: 1px -1px 8px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
+    box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
 
 }
 
@@ -22,12 +25,18 @@ transition: all 800ms ease-out;
 .post__info-Ingredients{
   margin-left: 5%;
   text-align:center;
-
+width:20%;
 }
 .post__info-foodPairing{
 margin-left: 10%;
 width: 20%;
 }
+
+.post__info-counter{
+margin-left: 10%;
+width: 35%;
+}
+
 .post__info-Wrapper{
 width:100%;
 overflow: hidden;
@@ -44,10 +53,6 @@ border-radius: 10px;
 }
 
 
-.post__info-counter{
-margin-left: 10%;
-width: 20%;
-}
 
 
 
