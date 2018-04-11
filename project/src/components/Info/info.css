@@ -1,12 +1,13 @@
 
+
 .post__info{
   margin:0 auto 10px auto ;
   width:70%;
   background-image:url("http://www.suncityvillas.com/size/1280x960/server13-cdn/2016/03/13/white-wood-wall-texture-pink-texture-9edbdd7367dfd232.jpg");
-  background-repeat: no-repeat;
+  background-repeat:repeat-y;
   background-position: top;
-
-  background-size: cover;
+transition: all 800ms ease-out;
+  background-attachment: fixed;
   padding: 10px;
   border-radius:5px;
 
@@ -18,17 +19,37 @@
 
 
 
-.post__info-ingredients{
-  width:10%;
+.post__info-Ingredients{
+  margin-left: 5%;
+  text-align:center;
+
 }
 .post__info-foodPairing{
-  width:20%;
+margin-left: 10%;
+width: 20%;
 }
 .post__info-Wrapper{
-  width:100%;
+width:100%;
 overflow: hidden;
  transition: all 800ms ease-out;
+background-color: rgba(207, 210, 211, 0.7);
+border-radius: 10px;
+-moz-box-shadow: 1px -1px 8px rgba(0, 0, 0,0.5);
+  -webkit-box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
+  box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
+ margin-bottom: 10px;
+
+
+
 }
+
+
+.post__info-counter{
+margin-left: 10%;
+width: 20%;
+}
+
+
 
 .post__comment{
   background-color: rgba(207, 210, 211, 0.7);

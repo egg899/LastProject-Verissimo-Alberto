@@ -12,7 +12,7 @@ constructor(props){
   this.state = {
     beerType:[],
     pending:false,
-    beerName:[]
+
 
 
 
@@ -114,6 +114,7 @@ console.log(this.state.beerType);
 <br/>
 
 <div className="timeline">
+  
 {posts.map(post =>(
 
   <Info
@@ -123,6 +124,11 @@ image_url={post.image_url}
 ingredients={post.ingredients}
 food_pairing={post.food_pairing}
 abv={post.abv}
+ebc={post.ebc}
+ibu={post.ibu}
+ph={post.ph}
+attenuation_level={post.attenuation_level}
+srm={post.srm}
   />
 ))}
 
