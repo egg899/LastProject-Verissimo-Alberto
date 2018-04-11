@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Info} from '../../components/Info';
-import {Form} from '../../components/Form';
-//import './App.css';
+import {Info, Form} from '../../components';
+
+
 
 
 
@@ -65,11 +65,14 @@ console.log(this.state.beerType);
 <br/>
 
 {posts.map(post =>(
+
   <Info
 name={post.name}
 description={post.description}
 image_url={post.image_url}
 ingredients={post.ingredients}
+food_pairing={post.food_pairing}
+abv={post.abv}
   />
 ))}
 {/* <Info
