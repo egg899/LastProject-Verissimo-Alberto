@@ -42,13 +42,15 @@ width: 40%;
 width:100%;
 overflow: hidden;
  transition: all 800ms ease-out;
-background-color: rgba(207, 210, 211, 0.7);
+/* background-color: rgba(207, 210, 211, 0.7); */
+
+background-image: url("https://www.brewdog.com/images/newshop/background-tile-50.png");
 border-radius: 10px;
 -moz-box-shadow: 1px -1px 8px rgba(0, 0, 0,0.5);
   -webkit-box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
   box-shadow: 1px -1px 8px rgba(0, 0, 0, .5);
  margin-bottom: 10px;
- 
+
 box-sizing: border-box;
 
 
