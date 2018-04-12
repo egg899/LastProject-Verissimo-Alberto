@@ -26,7 +26,7 @@ searchBarBeer(e){
   }
   else{
   const name= e.target[0].value;
-
+  
 
   const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
 
@@ -114,7 +114,7 @@ console.log(this.state.beerType);
 <br/>
 
 <div className="timeline">
-  
+
 {posts.map(post =>(
 
   <Info

@@ -89,9 +89,11 @@ opacity:this.state.shown ? 0 : 1,
                        <div className="post__info-Details ">
 
                          {/* <img className="left image" width="7%" alt={beer.name} src={beer.image_url}/> */}
-          <div className="left post__description post__info-Center">{this.props.description}</div>
-                        <div onClick={this.toggle.bind(this)}><span ><BeerImage
-     className="right"  image_url={this.props.image_url} /></span></div>
+          <div className="left post__info-description post__info-Center">{this.props.description}</div>
+                        <div><span><BeerImage event= {this.toggle.bind(this)}
+     className="right"  image_url={this.props.image_url} /></span>
+      
+   </div>{/*BeerImage*/}
 
 
                         <div className="post__info-Wrapper" style={hidden}>
