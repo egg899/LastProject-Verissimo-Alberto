@@ -19,41 +19,25 @@ constructor(props){
   };
 }//constructor
 
-searchBarBeer(e){
-  e.preventDefault();
-  if(e.target[0].value===''){
-    alert('Add value');
-  }
-  else{
-  const name= e.target[0].value;
-  
-
+searchBeerByName(name) {
   const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
-
-this.setState({
-    beerType:[],
-    pending:true
-
-
-})
+  this.setState({
+      beerType:[],
+      pending:true
 
 
+  })
   fetch(api).then(response => response.json()).then((data) =>{
-
     this.setState({
         beerType:data,
         pending:false
-
     });
+  })}//fetch
 
 
-
-
-
-
-
-
-})}//fetch
+searchBarBeer(e){
+  e.preventDefault();
+  this.searchBeerByName(e.target[0].value);
 }//searchBarBeer
 
 
@@ -62,24 +46,7 @@ this.setState({
 
 searchBeer(e){
   e.preventDefault();
-  const name= e.target.value;
-  const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
-
-this.setState({
-    beerType:[],
-    pending:true
-
-
-})
-
-
-  fetch(api).then(response => response.json()).then((data) =>{
-
-    this.setState({
-        beerType:data,
-        pending:false
-
-    });
+  this.searchBeerByName(e.target.value);
 
 
 
@@ -88,7 +55,7 @@ this.setState({
 console.log(this.state.beerType);
 
 
-})//fetch
+
 
 
 }//searchBeer
