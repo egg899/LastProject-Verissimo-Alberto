@@ -3,3 +3,14 @@
   text-align: center;
   margin-bottom: 20px;
 }
+ .timeline__form{
+   text-align:center;
+   background-color: rgba(42, 174, 211, 0.7);
+   box-sizing: border-box;
+   padding: 10px;
+
+ }
+
+ .btn{
+   display: inline-block;
+ }

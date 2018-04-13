@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import {BeerLoader} from '../../components';
 import './Form.css';
 
-export const Form = (props)=> (
+export class Form extends Component {
+  
+
+  render(){
+
+
+ return(
   <div>
 
-      <form onSubmit={props.searchBarBeer} className="form">
-        <input /> <button>Click Here</button><br />
+      <form  className="form">
 
-      <input type="button" value="Punk Ipa" onClick={props.searchBeer}/>
-        <input type="button" value="Dead Pony Club" onClick={props.searchBeer}/>
-        <input type="button" value="Jet Black Heart" onClick={props.searchBeer}/>
+
+      <input type="button" value="Punk Ipa" onClick={this.props.searchBeer}/>
+        <input type="button" value="Dead Pony Club" onClick={this.props.searchBeer}/>
+        <input type="button" value="Jet Black Heart" onClick={this.props.searchBeer}/>
 
       </form>
 <br/>
-      {props.pending ? <BeerLoader/> : ''}
+      {this.props.pending ? <BeerLoader/> : ''}
     </div>
     )
+
+}}

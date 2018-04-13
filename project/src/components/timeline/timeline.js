@@ -12,12 +12,46 @@ constructor(props){
   this.state = {
     beerType:[],
     pending:false,
-
+    show:false,
+    showb:false
 
 
 
   };
+
+  this.toggleDiv =this.toggleDiv.bind(this);
+  this.toggleDivb =this.toggleDivb.bind(this);
 }//constructor
+/***Toggle Searc Bars***/
+toggleDiv = ()=>{
+  const {show} = this.state;
+  const {showb} = this.state;
+  this.setState({show:!show, showb:false})
+}//toggleDiv
+toggleDivb = ()=>{
+  const {showb} = this.state;
+  const {show} = this.state;
+  this.setState({showb:!showb, show:false})
+}//toggleDiv
+
+
+searchBeerByAbv(e) {
+  e.preventDefault();
+  const number=e.target[0].value;
+  const api='https://api.punkapi.com/v2/beers?abv_lt='+ number;
+  this.setState({
+      beerType:[],
+      pending:true
+
+
+  })
+  fetch(api).then(response => response.json()).then((data) =>{
+    this.setState({
+        beerType:data,
+        pending:false
+    });
+  })}//searchBeerByAbv
+/*** End of Toggle Searc Bars***/
 
 searchBeerByName(name) {
   const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
@@ -32,12 +66,17 @@ searchBeerByName(name) {
         beerType:data,
         pending:false
     });
-  })}//fetch
+  })}//searchBeerByName
 
 
 searchBarBeer(e){
   e.preventDefault();
-  this.searchBeerByName(e.target[0].value);
+  if(e.target[0].value===""){
+    alert("add a value");
+  }else{
+    this.searchBeerByName(e.target[0].value);
+  }
+
 }//searchBarBeer
 
 
@@ -73,11 +112,24 @@ console.log(this.state.beerType);
           <input /><button /> <br />
         </form> */}
         <center><img width="150" className="logo" src="https://www.buysmart.org.uk/cdn/scale/340/340/brand-logo/1501054085-11b58021123c9b1865ef76f0a5f9edba.png" /></center>
-  <div >    <Form pending={this.state.pending}
+  <div className="timeline__form">
+
+  <span className="btn">  <button onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
+<span className="btn">  <button onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
+    {this.state.show && <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />}
+    {this.state.showb && <Boxb searchBarBeer={(e)=>this.searchBeerByAbv(e)} />}
+
+    <Form pending={this.state.pending}
         searchBeer={(e)=>this.searchBeer(e)}
         searchBarBeer={(e)=>this.searchBarBeer(e)}
+        searchBeerByAbv={(e)=>this.searchBeerByAbv(e)}
 
-      /></div>
+      />
+
+
+    </div>
+
+
 <br/>
 
 <div className="timeline">
@@ -104,5 +156,26 @@ srm={post.srm}
 
       </div>
     );
+  }
+}
+
+
+class Box extends Component {
+  render(){
+    return(
+      <form onSubmit= {this.props.searchBarBeer}>
+      <input /> <button>Search By Name</button><br />
+    </form>
+    )
+  }
+}
+
+class Boxb extends Component {
+  render(){
+    return(
+      <form onSubmit= {this.props.searchBarBeer}>
+      <input /> <button>Search By ABV</button><br />
+    </form>
+    )
   }
 }
