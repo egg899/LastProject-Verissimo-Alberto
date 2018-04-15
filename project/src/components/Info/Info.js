@@ -2,7 +2,7 @@ import React from 'react';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 import {BeerImage} from './beerImage';
 import { Comment } from './Comments';
-import { Parallax } from 'react-scroll-parallax';
+
 import CountUp, { startAnimation } from 'react-countup';
 import './info.css';
 import StarRatingComponent from 'react-star-rating-component';
@@ -92,7 +92,7 @@ opacity:this.state.shown ? 0 : 1,
           <div className="left post__info-description post__info-Center">{this.props.description}</div>
                         <div><span><BeerImage event= {this.toggle.bind(this)}
      className="right"  image_url={this.props.image_url} /></span>
-      
+
    </div>{/*BeerImage*/}
 
 
@@ -244,9 +244,9 @@ redraw={this.state.shown}
                              name="rate1"
                              starCount={5}
                             value={rating}
-                             onStarClick={this.onStarClick.bind(this)
+                            onStarClick={this.onStarClick.bind(this)
 
-                             }
+                            }
                            />
 
 
