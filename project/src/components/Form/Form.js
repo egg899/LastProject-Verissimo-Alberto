@@ -29,7 +29,7 @@ export class Form extends Component {
         <input type="button" value="Jet Black Heart" onClick={this.props.searchBeer}/> */}
 
       </form>
-<br/>
+
       {this.props.pending ? <BeerLoader/> : ''}
     </div>
     )

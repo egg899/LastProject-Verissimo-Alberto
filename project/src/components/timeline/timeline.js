@@ -38,19 +38,30 @@ toggleDivb = ()=>{
 searchBeerByAbv(e) {
   e.preventDefault();
   const number=e.target[0].value;
-  const api='https://api.punkapi.com/v2/beers?abv_lt='+ number;
-  this.setState({
-      beerType:[],
-      pending:true
+  const patt1=/[1-9]/g;
+  if(!patt1.test(number)){
+    alert("Add a value");
+  }else{
 
-
-  })
-  fetch(api).then(response => response.json()).then((data) =>{
+    const api='https://api.punkapi.com/v2/beers?abv_lt='+ number;
     this.setState({
-        beerType:data,
-        pending:false
-    });
-  })}//searchBeerByAbv
+        beerType:[],
+        pending:true
+
+
+    })
+    fetch(api).then(response => response.json()).then((data) =>{
+      this.setState({
+          beerType:data,
+          pending:false
+      });
+    })
+
+
+  }//else
+
+
+}//searchBeerByAbv
 /*** End of Toggle Searc Bars***/
 
 searchBeerByName(name) {
