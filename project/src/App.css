@@ -1,6 +1,7 @@
 body{
   background-image: url("https://n6-img-fp.akamaized.net/vector-gratis/textura-de-pared-pintada-desigual_23-2147506835.jpg?size=338&ext=jpg");
   background-attachment: fixed;
+background-position: center top;
   background-repeat: no-repeat;
   background-size:cover;
 }

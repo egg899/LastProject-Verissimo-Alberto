@@ -12,6 +12,7 @@ constructor(props){
   this.state = {
     beerType:[],
     pending:false,
+    appUsed:false,
     show:false,
     showb:false
 
@@ -38,7 +39,7 @@ toggleDivb = ()=>{
 searchBeerByAbv(e) {
   e.preventDefault();
   const number=e.target[0].value;
-  const patt1=/[1-9]/g;
+  const patt1=/[0-9]/g;
   if(!patt1.test(number)){
     alert("Add a value");
   }else{
@@ -46,14 +47,16 @@ searchBeerByAbv(e) {
     const api='https://api.punkapi.com/v2/beers?abv_lt='+ number;
     this.setState({
         beerType:[],
-        pending:true
+        pending:true,
+        appUsed:true
 
 
     })
     fetch(api).then(response => response.json()).then((data) =>{
       this.setState({
           beerType:data,
-          pending:false
+          pending:false,
+
       });
     })
 
@@ -68,7 +71,8 @@ searchBeerByName(name) {
   const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
   this.setState({
       beerType:[],
-      pending:true
+      pending:true,
+      appUsed:true
 
 
   })
@@ -87,7 +91,7 @@ searchBarBeer(e){
   }else{
     this.searchBeerByName(e.target[0].value);
   }
-
+console.log(this.state.beerType);
 }//searchBarBeer
 
 
@@ -122,7 +126,9 @@ console.log(this.state.beerType);
         {/* <form onSubmit={(e)=>this.searchBarBeer(e)}>
           <input /><button /> <br />
         </form> */}
+        <div className="timeline__header">
         <center><img width="150" className="logo" src="https://www.buysmart.org.uk/cdn/scale/340/340/brand-logo/1501054085-11b58021123c9b1865ef76f0a5f9edba.png" /></center>
+      </div>
   <div className="timeline__form">
 
   <span className="btn">  <button onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
@@ -134,6 +140,8 @@ console.log(this.state.beerType);
         searchBeer={(e)=>this.searchBeer(e)}
         searchBarBeer={(e)=>this.searchBarBeer(e)}
         searchBeerByAbv={(e)=>this.searchBeerByAbv(e)}
+        beerType={this.state.beerType}
+        appUsed={this.state.appUsed}
 
       />
 

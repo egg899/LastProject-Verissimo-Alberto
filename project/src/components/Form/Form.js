@@ -31,6 +31,14 @@ export class Form extends Component {
       </form>
 
       {this.props.pending ? <BeerLoader/> : ''}
+
+      {(this.props.beerType.length===0 && this.props.appUsed && !this.props.pending) ?
+        <div className="post__notFound">
+          <img className="homer" src="https://i.pinimg.com/originals/3a/11/68/3a116884945f870924f1ffd3f36fc015.png"/>
+        <p>Nothing was Found man!!!!!</p>
+      </div>:''
+    }
+
     </div>
     )
 

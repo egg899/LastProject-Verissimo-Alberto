@@ -1,8 +1,22 @@
 .form{
   text-align:center;
-  
+
   box-sizing: border-box;
   padding: 10px;
 
 
+}
+
+.post__notFound{
+  width:300px;
+  margin: 0 auto;
+  position:absolute;
+  top:50%;
+  left:30%;
+
+
+}
+.homer{
+  width: 100%;
+  height: auto;
 }
