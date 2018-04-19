@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Info, Form} from '../../components';
-import './timeline.css'
+
+import './timeline.css';
+
 
 
 
@@ -40,6 +42,7 @@ searchBeerByAbv(e) {
   e.preventDefault();
   const number=e.target[0].value;
   const patt1=/[0-9]/g;
+
   if(!patt1.test(number)){
     alert("Add a value");
   }else{
@@ -68,6 +71,9 @@ searchBeerByAbv(e) {
 /*** End of Toggle Searc Bars***/
 
 searchBeerByName(name) {
+
+
+
   const api='https://api.punkapi.com/v2/beers?beer_name='+ name;
   this.setState({
       beerType:[],
@@ -86,7 +92,9 @@ searchBeerByName(name) {
 
 searchBarBeer(e){
   e.preventDefault();
-  if(e.target[0].value===""){
+  const patt1=/[!$%^&*()_+|~=`{}\[\:"'<>?,.\/]/g;
+  const value=e.target[0].value;
+  if(value==="" || patt1.test(value)){
     alert("add a value");
   }else{
     this.searchBeerByName(e.target[0].value);
@@ -119,6 +127,18 @@ console.log(this.state.beerType);
 
   render() {
     const posts=this.state.beerType;
+    const blackbg = {
+      background:this.state.show ? "black": "white",
+      color:this.state.show ? "white": "black",
+
+    }
+    const blackbgb = {
+      background:this.state.showb ? "black": "white",
+      color:this.state.showb ? "white": "black",
+
+    }
+
+
 
     return (
       <div >
@@ -129,10 +149,11 @@ console.log(this.state.beerType);
         <div className="timeline__header">
         <center><img width="150" className="logo" src="https://www.buysmart.org.uk/cdn/scale/340/340/brand-logo/1501054085-11b58021123c9b1865ef76f0a5f9edba.png" /></center>
       </div>
+
   <div className="timeline__form">
 
-  <span className="btn">  <button onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
-<span className="btn">  <button onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
+  <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
+<span className="timeline__form-btn">  <button style={blackbgb} onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
     {this.state.show && <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />}
     {this.state.showb && <Boxb searchBarBeer={(e)=>this.searchBeerByAbv(e)} />}
 

@@ -110,20 +110,20 @@ opacity:this.state.shown ? 0 : 1,
                                          <div className="clear"></div>
                                          <div className="post__info-Ingredients left" >
                                          <h2>Ingredients</h2>
-                                         <h3><img width="20" src="https://www.brewdog.com/images/icons/malt.png"/> Malt</h3>
+                                         <h3><img width="20" alt="icon" src="https://www.brewdog.com/images/icons/malt.png"/> Malt</h3>
                                         {this.props.ingredients.malt.map(item=>(
                                            <div>{item.name}: {item.amount.value} {item.amount.unit}</div>
 
 
                                          ))}{/*Malt*/}
-                                <h3><img width="20" src="https://www.brewdog.com/images/icons/hop.png"/> Hops</h3>
+                                <h3><img width="20" alt="icon" src="https://www.brewdog.com/images/icons/hop.png"/> Hops</h3>
                                       {this.props.ingredients.hops.map(item=>(
                                         <div>{item.name}: {item.amount.value} {item.amount.unit}</div>
 
 
                                         ))}{/*Hops*/}
 
-                                        <h3> <img width ="20" src="https://www.brewdog.com/images/icons/ibu.png"/> Yeast</h3>
+                                        <h3> <img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/ibu.png"/> Yeast</h3>
                                        {this.props.ingredients.yeast}
 
               </div>{/*Post_info-Ingredients*/}
@@ -158,7 +158,7 @@ opacity:this.state.shown ? 0 : 1,
   /></h3>{/*ABV*/}
 
 
-  <h3>  <img width ="20" src="https://www.brewdog.com/images/icons/abv.png"/> Att Lvl: <CountUp
+  <h3>  <img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/abv.png"/> Att Lvl: <CountUp
             className="attenuation_level"
               start={0}
               end={this.props.attenuation_level}
@@ -174,7 +174,7 @@ opacity:this.state.shown ? 0 : 1,
 /></h3>{/*Attenuation*/}
 
 
-                          <h3><img width ="20" src="https://www.brewdog.com/images/icons/abv.png"/> EBC:<CountUp
+                          <h3><img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/abv.png"/> EBC:<CountUp
                               className="ebc"
                               start={0}
                               end={this.props.ebc}
@@ -190,7 +190,7 @@ opacity:this.state.shown ? 0 : 1,
 
 /></h3> {/*EBC*/}
 
-<h3><img width ="20" src="https://www.brewdog.com/images/icons/ibu.png"/> IBU:<CountUp
+<h3><img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/ibu.png"/> IBU:<CountUp
     className="ibu"
     start={0}
     end={this.props.ibu}
@@ -207,7 +207,7 @@ redraw={this.state.shown}
 /></h3> {/*ibu*/}
 
 
-<h3><img width ="20" src="https://www.brewdog.com/images/icons/ibu.png"/> PH:<CountUp
+<h3><img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/ibu.png"/> PH:<CountUp
     className="ph"
     start={0}
     end={this.props.ph}
@@ -223,7 +223,7 @@ redraw={this.state.shown}
 
 /></h3> {/*ph*/}
 
-<h3><img width ="20" src="https://www.brewdog.com/images/icons/abv.png"/> SRM:<CountUp
+<h3><img width ="20" alt="icon" src="https://www.brewdog.com/images/icons/abv.png"/> SRM:<CountUp
     className="srm"
     start={0}
     end={this.props.srm}

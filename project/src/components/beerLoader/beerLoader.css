@@ -10,7 +10,12 @@
   top:60%;
   left: 40%;
 }
+@media only screen and (max-width: 600px) {
+  .beerLoader{
 
+    left: 15%;
+  }
+}
 /* .beerLoader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
