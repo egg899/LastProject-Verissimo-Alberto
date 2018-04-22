@@ -17,7 +17,7 @@ constructor(props){
     appUsed:false,
     show:false,
     showb:false,
-    burger:false
+
 
 
 
@@ -34,10 +34,20 @@ toggleBurger= ()=>{
 //   burger:!burger
 // })
 let linksEl = document.querySelector('.timeline__menu');
+let linka=document.querySelector('.bar1');
+let linkb=document.querySelector('.bar2');
+let linkc=document.querySelector('.bar3');
+
   if (linksEl.style.visibility === 'visible') {
             linksEl.style.visibility = 'hidden';
+            linka.style.transform = "rotate(0deg) translate(0px, 0px)";
+            linkb.style.opacity = "1";
+            linkc.style.transform = "rotate(0deg) translate(0px, 0px)"
         } else {
             linksEl.style.visibility = 'visible';
+            linka.style.transform = "rotate(-45deg) translate(-9px, 6px)";
+            linkb.style.opacity = "0";
+            linkc.style.transform = "rotate(45deg) translate(-8px, -8px)"
         }
 }
 
@@ -155,7 +165,7 @@ console.log(this.state.beerType);
     }
 
 const burger = {
-  visibility:this.state.burger ? "hidden" : "visible"
+  transform:this.state.burger ? "hidden" : "visible"
 }
 
 
@@ -170,7 +180,9 @@ const burger = {
       </div>
 
   <div className="timeline__form">
-<span  className="timeline__icon" onClick={this.toggleBurger} >&#9776;</span>
+<span  className="timeline__icon" onClick={this.toggleBurger} ><div class="bar1"></div>
+  <div class="bar2"></div>
+  <div class="bar3"></div></span>
 
   <div className="timeline__menu" >
   <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
