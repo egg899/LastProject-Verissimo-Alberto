@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Info, Form} from '../../components';
-
+import {SlideDown} from 'react-slidedown';
 import './timeline.css';
 
 
@@ -40,11 +40,15 @@ let linkc=document.querySelector('.bar3');
 
   if (linksEl.style.visibility === 'visible') {
             linksEl.style.visibility = 'hidden';
+            linksEl.style.opacity = '0';
+
             linka.style.transform = "rotate(0deg) translate(0px, 0px)";
             linkb.style.opacity = "1";
             linkc.style.transform = "rotate(0deg) translate(0px, 0px)"
         } else {
             linksEl.style.visibility = 'visible';
+            linksEl.style.opacity = '1';
+
             linka.style.transform = "rotate(-45deg) translate(-9px, 6px)";
             linkb.style.opacity = "0";
             linkc.style.transform = "rotate(45deg) translate(-8px, -8px)"
@@ -184,7 +188,9 @@ const burger = {
   <div class="bar2"></div>
   <div class="bar3"></div></span>
 
+
   <div className="timeline__menu" >
+
   <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
 <span className="timeline__form-btn">  <button style={blackbgb} onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
     {this.state.show && <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />}
@@ -200,6 +206,7 @@ const burger = {
       />
 
     </div>{/*timeline__menu*/}
+
 
     </div>{/*timeline__form*/}
 

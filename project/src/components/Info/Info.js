@@ -243,6 +243,7 @@ redraw={this.state.shown}
                         </div>{/* counters*/}
 
        </div>{/**Post_info-Wrapper*/}
+
      </div>{/*Post_info-details*/}
 
 <div className="post__comment">

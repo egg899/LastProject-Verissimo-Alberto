@@ -110,7 +110,7 @@ color: black;
 
   .timeline__menu {
     visibility:hidden;
-
+transition: 0.4s;
   }
 
 
