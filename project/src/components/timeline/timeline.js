@@ -16,7 +16,8 @@ constructor(props){
     pending:false,
     appUsed:false,
     show:false,
-    showb:false
+    showb:false,
+    burger:false
 
 
 
@@ -24,7 +25,22 @@ constructor(props){
 
   this.toggleDiv =this.toggleDiv.bind(this);
   this.toggleDivb =this.toggleDivb.bind(this);
+  this.toggleBurger= this.toggleBurger.bind(this);
 }//constructor
+
+toggleBurger= ()=>{
+// const {burger} = this.state;
+// this.setState({
+//   burger:!burger
+// })
+let linksEl = document.querySelector('.timeline__menu');
+  if (linksEl.style.visibility === 'visible') {
+            linksEl.style.visibility = 'hidden';
+        } else {
+            linksEl.style.visibility = 'visible';
+        }
+}
+
 /***Toggle Searc Bars***/
 toggleDiv = ()=>{
   const {show} = this.state;
@@ -35,7 +51,7 @@ toggleDivb = ()=>{
   const {showb} = this.state;
   const {show} = this.state;
   this.setState({showb:!showb, show:false})
-}//toggleDiv
+}//toggleDivb
 
 
 searchBeerByAbv(e) {
@@ -138,6 +154,9 @@ console.log(this.state.beerType);
 
     }
 
+const burger = {
+  visibility:this.state.burger ? "hidden" : "visible"
+}
 
 
     return (
@@ -151,7 +170,9 @@ console.log(this.state.beerType);
       </div>
 
   <div className="timeline__form">
+<span  className="timeline__icon" onClick={this.toggleBurger} >&#9776;</span>
 
+  <div className="timeline__menu" >
   <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
 <span className="timeline__form-btn">  <button style={blackbgb} onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
     {this.state.show && <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />}
@@ -166,8 +187,9 @@ console.log(this.state.beerType);
 
       />
 
+    </div>{/*timeline__menu*/}
 
-    </div>
+    </div>{/*timeline__form*/}
 
 
 <br/>
