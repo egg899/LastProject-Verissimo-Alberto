@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Info, Form} from '../../components';
-import {SlideDown} from 'react-slidedown';
+import AnimateHeight from 'react-animate-height';
 import './timeline.css';
 
 
@@ -17,7 +17,8 @@ constructor(props){
     appUsed:false,
     show:false,
     showb:false,
-    visible:'panel'
+    height: 0
+
 
 
 
@@ -159,6 +160,8 @@ console.log(this.state.beerType);
 
 
   render() {
+    
+
     const posts=this.state.beerType;
     const blackbg = {
       background:this.state.show ? "black": "white",
