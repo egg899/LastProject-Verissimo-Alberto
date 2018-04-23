@@ -17,6 +17,7 @@ constructor(props){
     appUsed:false,
     show:false,
     showb:false,
+    visible:'panel'
 
 
 
@@ -53,6 +54,8 @@ let linkc=document.querySelector('.bar3');
             linkb.style.opacity = "0";
             linkc.style.transform = "rotate(45deg) translate(-8px, -8px)"
         }
+
+
 }
 
 /***Toggle Searc Bars***/
