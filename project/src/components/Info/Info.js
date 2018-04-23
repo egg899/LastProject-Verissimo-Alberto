@@ -25,12 +25,15 @@ constructor(props){
 
 handleCommentSubmission(event){
   event.preventDefault();
-  const text=event.target[0].value;
+  const text=event.target[0].value ;
   const comment = {owner:'Albert', text:text};
 
   event.target[0].value ='';
   const commented = this.state.comments
-  commented.push(comment);
+  commented.push(comment)
+
+console.log(commented.length);
+
 
   this.setState({
     comments:commented
@@ -263,8 +266,8 @@ redraw={this.state.shown}
 
                         {this.state.comments.map(comment =><Comment owner={comment.owner} text={comment.text}/>)}
                         <hr className="post__body-separator" />
-                        <form onSubmit={(event)=>this.handleCommentSubmission(event)}>
-                        <input placeholder="Add a comment" className="post__coment-input" />
+                        <form onSubmit={(event)=>this.handleCommentSubmission(event) }>
+                        <input  placeholder="Add a comment" className="post__coment-input" />
 
                       </form>
                     </div>{/*post__comment*/}
