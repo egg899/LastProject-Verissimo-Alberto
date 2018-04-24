@@ -160,7 +160,7 @@ console.log(this.state.beerType);
 
 
   render() {
-    
+
 
     const posts=this.state.beerType;
     const blackbg = {
@@ -204,8 +204,7 @@ const burger = {
 
     <Form pending={this.state.pending}
         searchBeer={(e)=>this.searchBeer(e)}
-        searchBarBeer={(e)=>this.searchBarBeer(e)}
-        searchBeerByAbv={(e)=>this.searchBeerByAbv(e)}
+        
         beerType={this.state.beerType}
         appUsed={this.state.appUsed}
 
