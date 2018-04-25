@@ -96,7 +96,7 @@ opacity:this.state.shown ? 0 : 1,
                          {/* <img className="left image" width="7%" alt={beer.name} src={beer.image_url}/> */}
           <div className="left post__info-description post__info-Center">{this.props.description}
             <br/>
-              <p style={shown} className="left post__info-message"><strong>Click on the image for more information &#x21E8;</strong></p>
+              <p style={shown} className="left post__info-message"><strong>Click on the beer image for more information <span class="arrow"></span></strong></p>
           </div>
 
               <br/>
@@ -258,9 +258,9 @@ redraw={this.state.shown}
                              name="rate1"
                              starCount={5}
                             value={rating}
-                            onStarClick={this.onStarClick.bind(this)
 
-                            }
+
+
                            />
 
 
