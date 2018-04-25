@@ -42,7 +42,7 @@ npm start
 and your project will appear in your browser
 
 ### Prerequisites
-Fisrt you have to import all the components that you will be using in the timeline.js compoent:
+First you have to import all the components that you will be using in the timeline.js compoent:
 ```
 import React, { Component } from 'react';
 import {Info, Form} from '../../components';
@@ -134,7 +134,7 @@ I am also calling the Form.js component to display the the button that will get 
 
   />
 ```
-It also has two more compoents where it lays the two search bars that i am using called Box and Boxb.
+It also has two more components where it lays the two search bars that i am using called Box and Boxb.
 
 ```
 <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />

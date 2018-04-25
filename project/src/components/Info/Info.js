@@ -19,7 +19,8 @@ constructor(props){
     comments: [],
     shown:true,
     hidden:false,
-    rating: Math.ceil(Math.random() * Math.floor(5))
+    rating: Math.ceil(Math.random() * Math.floor(5)),
+    ratingb:0
   }
 }//constructor
 
@@ -41,7 +42,7 @@ console.log(commented.length);
 }//handleCommentSubmission
 
 onStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
+    this.setState({ ratingb:nextValue});
   }//onStartClick
 
 toggle(){
@@ -56,6 +57,7 @@ toggle(){
   render(){
 
  const { rating } = this.state;
+ const { ratingb } = this.state;
 
 const shown = {
   //display: this.state.shown ? "block" : "none",
@@ -264,11 +266,23 @@ redraw={this.state.shown}
 
                         </div>
 
-                        {this.state.comments.map(comment =><Comment owner={comment.owner} text={comment.text}/>)}
+                        {this.state.comments.map(comment =><Comment owner={comment.owner} text={comment.text} rating={ratingb}/>
+
+                        )
+
+                      }
                         <hr className="post__body-separator" />
                         <form onSubmit={(event)=>this.handleCommentSubmission(event) }>
                         <input  placeholder="Add a comment" className="post__coment-input" />
+                        <br/>
+                         <StarRatingComponent
+                          name="rate1"
+                          starCount={5}
+                         value={ratingb}
+                         onStarClick={this.onStarClick.bind(this)
 
+                         }
+                        />
                       </form>
                     </div>{/*post__comment*/}
 

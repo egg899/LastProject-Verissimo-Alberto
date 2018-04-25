@@ -22,6 +22,7 @@ export class Form extends Component {
       <form  className="form">
 {types.map(type =>(
   <input type="button" value={type} onClick={this.props.searchBeer}/>
+  
 ))}
 
       {/* <input type="button" value="Punk Ipa" onClick={this.props.searchBeer}/>
