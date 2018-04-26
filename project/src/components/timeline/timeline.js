@@ -44,6 +44,7 @@ let linkc=document.querySelector('.bar3');
             linksEl.style.visibility = 'hidden';
             linksEl.style.opacity = '0';
 
+
             linka.style.transform = "rotate(0deg) translate(0px, 0px)";
             linkb.style.opacity = "1";
             linkc.style.transform = "rotate(0deg) translate(0px, 0px)"
@@ -174,9 +175,17 @@ console.log(this.state.beerType);
 
     }
 
-const burger = {
-  transform:this.state.burger ? "hidden" : "visible"
-}
+    const arrow = {
+      transform: this.state.show ? "rotateX(180deg)":"rotateX(360deg)",
+      transition : "all 0.4s"
+    }
+
+    const arrowb = {
+      transform: this.state.showb ? "rotateX(180deg)":"rotateX(360deg)",
+      transition : "all 0.4s"
+    }
+
+
 
 
     return (
@@ -197,14 +206,14 @@ const burger = {
 
   <div className="timeline__menu" >
 
-  <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name</button><br/></span>
-<span className="timeline__form-btn">  <button style={blackbgb} onClick={this.toggleDivb}>Search Beer by ABV</button><br/></span>
+  <span className="timeline__form-btn">  <button  style={blackbg} onClick={this.toggleDiv}>Search Beer By Name <span style={arrow} className="fa">&#xf106;</span></button><br/></span>
+<span className="timeline__form-btn">  <button style={blackbgb} onClick={this.toggleDivb}>Search Beer by ABV <span style={arrowb} className="fa">&#xf106;</span></button><br/></span>
     {this.state.show && <Box searchBarBeer={(e)=>this.searchBarBeer(e)} />}
     {this.state.showb && <Boxb searchBarBeer={(e)=>this.searchBeerByAbv(e)} />}
 
     <Form pending={this.state.pending}
         searchBeer={(e)=>this.searchBeer(e)}
-        
+
         beerType={this.state.beerType}
         appUsed={this.state.appUsed}
 
@@ -250,7 +259,7 @@ class Box extends Component {
   render(){
     return(
       <form onSubmit= {this.props.searchBarBeer}>
-      <input /> <button>Search By Name</button><br />
+      <input /> <button >Search By Name</button><br />
     </form>
     )
   }
